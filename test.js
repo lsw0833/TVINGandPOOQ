@@ -14,11 +14,11 @@ var el = driver.findElement(By.id('ID_LIVETOP2')).findElements(By.tagName('a'));
 //el.getAttribute('href').then(v=>console.log(v));
 el.then((e)=>{
   for(var i=0; i<e.length; i++){
-    e[i].getAttribute('href').then((v) =>{
-      link.push(v);
-    });
+    link.push(e[i].getAttribute('href'));
   }
-  Promise.all(link).then(()=>console.log(link));
+  Promise.all(link).then(function(values){
+    console.log(values);
+  });
 });
 var el2 = driver.findElement(By.id('ID_LIVETOP2')).findElements(By.className('caption'));
 el2.then((e)=>{
