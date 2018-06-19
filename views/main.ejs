@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/views/main.js"></script>
-  <title>CapstoneDesign1</title>
+  <title>WebTV Connecter</title>
   <!-- your custom css -->
-  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="stylesheet" href="/views/css/custom.css">
 </head>
 
 <body>
   <!--Header-->
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="#">CapstoneDesign1</a>
+    <a class="navbar-brand" href="#">WebTV Connecter</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,13 +31,7 @@
           <a class="nav-link" href="#about">About</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#upload">Upload</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#download">Download</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#datashop">Datashop</a>
+          <a class="nav-link" href="#channel">channel</a>
         </li>
       </ul>
     </div>
@@ -51,111 +45,46 @@
     <div class="container">
       <header class="section__header">
         <h2 class="section__title mb-4">
-		  	<br>
-		    	About	데이터 거래용 코인 개발
+		    	About	WebTV Connecter
 		  	</h2>
       </header>
 
       <div class="section__text">
-      용량이 큰 데이터를 블록체인에 저장하면 블록체인의 크기가 커져 노드들의 부담이 커지고, 특정노드는 참여를 할 수 없게 됩니다.<br>
-      그래서 원본 데이터는 DB에 저장하고, 원본 데이터의 해시값을 블록체인에 저장하여 위의 문제를 해결합니다.<br>또한, DB속 원본 데이터가 위/변조된다면 해시값이 달라지게 됨으로 위변조를 방지합니다.
+        TVING + POOQ<br>
+        이제는 하나의 페이지에서 모든 채널의 라이브 시청을 하세요!<br>
       </div>
     </div>
     <br>
   </section>
-  <!--// Upload-->
-
-  <!--Data Upload-->
-  <section id="upload" class="section" style="background-color:#f7f7f7;">
-    <div class="container">
-      <header class="section__header">
-        <h2 class="section__title mb-4">
-  	  	<br>
-  	  		UPLOAD Data Registration
-  	  	</h2>
-      </header>
-      <form id="uploadData" action="/upload" method="post" enctype="multipart/form-data">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="s_wallet">Wallet Address</label>
-            <input type="text" class="form-control" name="s_wallet" id="s_wallet" placeholder="Address">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="dataPrice">Price</label>
-            <input type="text" class="form-control" name="cost" id="cost" placeholder="Price">
-          </div>
-        </div>
-        <input type="file" id="uploadFile" name="img">
-        <input type="submit" class="btn btn-success" value="업로드">
-      </form>
-      <br>
-  </section>
-
-  <!--//Data upload-->
-
-  <!--Data download-->
-  <section id="download" class="section">
-    <div class="container">
-      <header class="section__header">
-        <h2 class="section__title mb-4">
-    	<br>
-    		DOWNLOAD Data Download
-    	</h2>
-      </header>
-      <form id= "download" action="/download" method="post">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="b_wallet">Buyer Wellet Address</label>
-            <input type="text" class="form-control" name="s_wallet" id="s_wallet" placeholder="Address">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="dataId">Id</label>
-            <input type="text" class="form-control" name="dataId" id="dataId" placeholder="ID">
-          </div>
-        </div>
-        <input type="submit" value="다운로드" class="btn btn-success">
-      </form>
-      <br>
-  </section>
-  <!--//Data download-->
 
   <!--data list-->
-  <section id="datashop" class="section" style="background-color:#f7f7f7;">
+  <section id="channel" class="section" style="background-color:#f7f7f7;">
     <div class="container">
       <header class="section__header">
         <h2 class="section__title mb-4">
-    	<br>
-    		DATALIST Data Business List
-    	</h2>
+    	 		Channel List
+    	  </h2>
       </header>
       <div class="col-lg-12">
         <div class="row">
-          <table class="table" id="data_list">
+          <table class="table" id="dummy">
+
+          </table>
+          <h4>○ TVING</h4>
+          <table class="table" id="Tving_list">
+
+          </table>
+          <br>
+          <h4>○ POOQ</h4>
+          <table class="table" id="Pooq_list">
 
           </table>
         </div>
+
       </div>
+    </div>
   </section>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-  </div>
-  <%
-  if(pass == 1) {
-  %>
-    <script type="text/javascript">
-      alert("업로드 실패!\n입력값을 확인해주세요")
-    </script>
-    <%
-  }else if(pass == 2){
-  %>
-      <script type="text/javascript">
-        alert("다운로드 실패\n 1.판매자한테 코인을 보내지 않은 경우\n 2.아직 검증이 되지 않은 데이터일 경우(5분뒤 다시 다운받으세요.)\n 3.데이터가 위변조된 경우")
-      </script>
-  <% }else if(pass ==3){ %>
-    <script type="text/javascript">
-      alert("업로드 성공!")
-    </script>
-  <% } %>
 </body>
 
 </html>

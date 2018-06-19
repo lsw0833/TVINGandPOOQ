@@ -1,22 +1,29 @@
-setInterval(load_data, 1000);
+load_data();
+setInterval(load_data, 500000);
 
 function load_data() {
   $.ajax({
     type: "GET",
-    url: "/dataList",
+    url: "/onair",
     success: function(data) {
-      var content = "<tr><td>ID</td><td>파일이름</td>" +
-        "<td>판매자 지갑주소</td><td>가격</td></tr>";
-      for (var i = 0; i < data.length; i++) {
-        var c = data[i];
-        var d = "<tr>";
-        d += "<td>" + c.id + "</td>";
-        d += "<td>" + c.file + "</td>";
-        d += "<td>" + c.wallet + "</td>";
-        d += "<td>" + c.cost + "</td></tr>";
-        content += d;
+      var t_content = "";
+      var p_content = "";
+      for (var i = 0; i < data.t_link.length; i++) {
+        var t = "<tr>";
+        t += '<td><a href = "' + data.t_link[i] +'">  <img height="80" src = "'+data.t_img[i] +'"></a></td>';
+        t += "<td>" + data.t_title[i] + "</td>";
+        t += "<td>" + data.t_channel[i] + "</td></tr>";
+        t_content += t;
       }
-      $("#data_list").html(content);
+      for (var i = 0; i < data.p_link.length; i++) {
+        var p = "<tr>"
+        p += '<td><a href = "' + data.p_link[i] +'"><img height="80" src = "'+data.p_img[i] +'"></a></td>';
+        p += "<td>" + data.p_title[i] + "</td>";
+        p += "<td>" + data.p_channel[i] + "</td></tr>";
+        p_content += p;
+      }
+      $("#Tving_list").html(t_content);
+      $("#Pooq_list").html(p_content);
     }
   });
 }
