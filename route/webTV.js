@@ -19,6 +19,11 @@ function renewTVING(){
     t_channel = channel;
     t_img = [];
     t_img = img;
+    for(var i =0; i<t_img.length; i++){
+      if(t_img[i]=="http://www.tving.com/public_v4/portal/css/img/adult19.png"){
+        t_img.splice(i,1);
+      }
+    }
     console.log("complete renew TVING`s channel");
   });
 }
